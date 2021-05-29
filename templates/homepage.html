@@ -13,6 +13,7 @@
             <h1>Portal informacyjny</h1>
         </div>
         <div class="text-center">Tematy:</div><br>
+        <div></div>
         <nav class="nav justify-content-center">
             {% for topic in topics %}
             <a class="nav-link active" href="{% url 'homePageByTopic' topic.id %}">{{topic.name}}</a>

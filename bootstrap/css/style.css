@@ -17,7 +17,11 @@
 }
 
 .login {
-    margin:20%;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    margin:5%;
+
 }
 
 .container-art {
@@ -32,6 +36,7 @@
 
 .nav {
     border: solid grey 1px;
+    text-align: center;
 }
 
 .article {

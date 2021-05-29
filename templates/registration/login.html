@@ -6,8 +6,10 @@
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     </head>
-    <body class="text-center"></body>
-    <div class="login">
+    <body class="text-center page"></body>
+    <img id="error-img" src="{% static 'media/logo_transparent.png'%}">
+    <h1>InfoSrc management panel</h1>
+    <div class="login text-center">
     <form class="form-signin"method="POST">
         {% csrf_token %}
         <h1 class="h3 mb-3 font-weight-normal">Zaloguj się</h1>

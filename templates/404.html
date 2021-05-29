@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head><link rel="stylesheet" href="style.css"></head>
+    <head><head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    </head></head>
     <body>
         <div class="error">
-            <img id="error-img" src="../media/logo_transparent.png">
+            <a href="/"><img id="error-img" src="{% static 'media/logo_transparent.png'%}"></a>
             <h1 id="error-text">404</h1>
-            <span>Nie znaleziono artykułu</span>
+            <span>Najprawdopodobniej trafiłeś/trafiłaś tu przez pomyłkę...<br>
+            Kliknij na logo, aby przejść do strony głównej.</span>
         </div>
     </body>
 </html>
