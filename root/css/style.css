@@ -1,0 +1,21 @@
+.error {
+    border: solid black;
+    border-radius: 20px;
+    margin:20%;
+    text-align: center;
+    padding: 70px 0;
+}
+
+#error-text {
+    color: red;
+}
+
+#error-img {
+    width:20%;
+    height: auto;
+}
+
+.login {
+    padding: 70px 0;
+    margin:20%;
+}

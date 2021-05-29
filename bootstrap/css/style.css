@@ -1,0 +1,44 @@
+.error {
+    border: solid black;
+    border-radius: 20px;
+    margin:20%;
+    text-align: center;
+    padding: 70px 0;
+}
+
+#error-text {
+    color: red;
+}
+
+#error-img {
+    width:20%;
+    height: auto;
+    margin: 20px;
+}
+
+.login {
+    margin:20%;
+}
+
+.container-art {
+    margin: 5%;
+    display: flex;
+    flex-direction: row;
+}
+
+#card-body {
+    margin: 10px;
+}
+
+.article {
+    border: solid black 1px;
+    margin: 2%;
+    padding: 2%;
+}
+
+.comments {
+    text-align: center;
+    margin: 2%;
+    padding: 2%;
+    
+}
