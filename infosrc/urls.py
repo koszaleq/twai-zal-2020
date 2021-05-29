@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from serwisInf.views import homePage, homePageByTopic, management, getArticle
+from serwisInf.views import homePage, homePageByTopic, management, getArticle, articlerating
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('article/<int:articleId>', getArticle, name='getArticle'),
+    path('article/<int:articleId>/', getArticle, name='getArticle'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('management/', management, name='management'),
     path('', homePage, name='homepage'),
+    path('article/<int:articleId>/<int:rate>', articlerating, name="articlerating"),
     path('topic/<int:topicId>', homePageByTopic, name='homePageByTopic'),
 ]

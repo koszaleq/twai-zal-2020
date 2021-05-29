@@ -30,10 +30,17 @@
     margin: 10px;
 }
 
+.nav {
+    border: solid grey 1px;
+}
+
 .article {
+    background-color: white;
     border: solid black 1px;
+    border-radius: 15px;
     margin: 2%;
     padding: 2%;
+    box-shadow: 3px 3px 3px grey;
 }
 
 .comments {
@@ -41,4 +48,8 @@
     margin: 2%;
     padding: 2%;
     
+}
+
+.page {
+    background-color:whitesmoke;
 }

@@ -35,21 +35,29 @@ def homePageByTopic(request, topicId):
         })
 
 
-def articlerating(request, articleId, ratingvalue):
+def articlerating(request, articleId, rate):
     try:
         article = Article.objects.get(id=articleId)
         rating = Rating.objects.get(article_id=article)
-        if 0 < ratingvalue <= 5:
+        if 0 < rate <= 5:
             rating.avg *= rating.rating_count
-            rating.avg += ratingvalue
-            rating.count += 1
+            rating.avg += rate
+            rating.rating_count += 1
             rating.avg /= rating.rating_count
+            rating.save()
+            return HttpResponseRedirect('./')
+
     except Article.DoesNotExist:
         return render(request, '404.html')
     except Rating.DoesNotExist:
         rating = Rating(article_id=article, avg=0, rating_count=0)
         rating.save()
         return HttpResponseRedirect('./')
+    except Exception as ex:
+        template = "An excption of type {0} occurred. Arguments:\n{1!r}"
+        message = template.format(type(ex).__name__, ex.args)
+        print(message)
+
 
 def getArticle(request, articleId):
 

@@ -7,13 +7,13 @@
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     </head>
-    <body>
+    <body class="page">
         <div class="text-center">
             <a href="/"><img id="error-img" src="{% static 'media/logo_transparent.png'%}"></a>
             <h1>Portal informacyjny</h1>
         </div>
-        <div>Tematy:</div><br>
-        <nav class="nav">
+        <div class="text-center">Tematy:</div><br>
+        <nav class="nav justify-content-center">
             {% for topic in topics %}
             <a class="nav-link active" href="{% url 'homePageByTopic' topic.id %}">{{topic.name}}</a>
             {% endfor %}
@@ -21,8 +21,19 @@
           <div class="article">
             <h2>{{article.title}}</h2>
             <h6>{{article.author}} napisał(a) dn. {{article.date}}</h6>
-            <h5>{{article.content}}</h3>
-          </div>
+            <h5>{{article.content}}</h3><br>
+            <div class="text-center">
+              <span><strong>Oceń artykuł!</strong></span><br>
+              <h4> <a href="{% url 'articlerating' article.id 1 %}">1</a>
+                <a href="{% url 'articlerating' article.id 2 %}">2</a>
+                <a href="{% url 'articlerating' article.id 3 %}">3</a>
+                <a href="{% url 'articlerating' article.id 4 %}">4</a>
+                <a href="{% url 'articlerating' article.id 5 %}">5</a></h4><br>
+                Średnia ocena: {{rating.avg}}/5.00 ({{rating.rating_count}} ocen)
+             </div>
+            </div>
+            
+          </div> 
           
 
           <div class="comments">
@@ -42,4 +53,5 @@
             </form>
           </div>
     </body>
+    <footer class="text-center"><a href="/accounts/login" style="color: grey">Logowanie do edytora</a></footer>
 </html>
